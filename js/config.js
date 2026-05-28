@@ -15,6 +15,12 @@ window.WEDDING_CONFIG = {
   // Дата свадьбы (полночь по локальному времени браузера гостя)
   weddingDate: "2026-08-14T00:00:00",
 
+  /** Главный экран: подставьте общее фото пары (PNG с прозрачностью — идеально) */
+  hero: {
+    photoUrl: "images/troitskoe-minsk.webp",
+    photoAlt: "Максим и Полина",
+  },
+
   googleFormEmbedUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScSqKTDiWSnRtZjcSEevJY8731NXH8faW_P1k2H0wdivg3MDg/viewform?embedded=true",
   googleFormViewUrl:
@@ -34,6 +40,6 @@ window.WEDDING_CONFIG = {
   // Telegram-чат гостей
   telegramChat: {
     inviteUrl: "https://t.me/+4lZjbHZuIIQxN2U6",
-    linkText: "Вступить в чат в Telegram",
+    linkText: "Вступить в чат",
   },
 };

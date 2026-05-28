@@ -7,10 +7,19 @@
 
   const config = window.WEDDING_CONFIG || {};
 
+  initHero(config.hero);
   initCountdown(config.weddingDate);
   initRsvp(config.googleFormEmbedUrl, config.googleFormViewUrl);
   initFlowerSubscription(config.flowerSubscription);
   initTelegramChat(config.telegramChat);
+
+  /** Фото и подпись на главном экране */
+  function initHero(hero) {
+    const img = document.getElementById("hero-photo");
+    if (!img || !hero) return;
+    if (hero.photoUrl) img.src = hero.photoUrl;
+    if (hero.photoAlt) img.alt = hero.photoAlt;
+  }
 
   /** Дни / часы / минуты до свадьбы */
   function initCountdown(dateString) {

@@ -13,6 +13,20 @@ Wedding/
 └── README.md
 ```
 
+## Ветки дизайна
+
+| Ветка | Стиль |
+|-------|--------|
+| `main` | Светлый минимализм — бежевый фон, Cormorant Garamond |
+| `design/alternative` | Светлый стиль (как [albertelena.wedding](https://albertelena.wedding/)) — Oswald + Onest, карточки, FAQ |
+
+Переключение:
+
+```powershell
+git checkout main
+git checkout design/alternative
+```
+
 ## Локальный запуск
 
 1. Откройте папку `Wedding` в проводнике.
@@ -71,6 +85,7 @@ git push -u origin main
 
 ## Что можно менять
 
+- **Фото на главной:** в `js/config.js` → `hero.photoUrl` (лучше общее фото пары в PNG с прозрачным фоном, как на [albertelena.wedding](https://albertelena.wedding/))
 - Тексты и время в `index.html`
 - Цвета и шрифты в `css/styles.css` (блок `:root`)
 - Дедлайн RSVP в секции `#rsvp`
