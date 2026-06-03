@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Свадебное приглашение — Максим и Полина, 14 августа 2026, Минск">
+  <title>Максим и Полина · свадьба</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__pattern" aria-hidden="true"></div>
+
+    <div class="hero__layout">
+      <figure class="hero__illustration">
+        <img
+          id="hero-illustration"
+          src="images/Скетчи/ludiclicami.svg"
+          alt="Полина и Максим"
+          width="388"
+          height="290"
+          decoding="async"
+          fetchpriority="high">
+      </figure>
+
+      <div class="hero__content">
+        <h1 class="hero__title">Приглашаем на свадьбу</h1>
+        <p class="hero__names">Полины и Максима</p>
+        <p class="hero__place">Минск · Троицкое предместье</p>
+        <time class="hero__date" datetime="2026-08-14">14 августа 2026</time>
+      </div>
+    </div>
+
+  </header>
+
+  <main id="main">
+    <section class="section section--welcome container container--narrow container--center" id="welcome">
+      <h2 class="section__title">Дорогие гости</h2>
+      <div class="section__text section__text--large welcome-text">
+        <p>
+          Совсем скоро состоится день, который станет для нас особенным,
+          и нам очень хочется разделить его с важными для нас людьми.
+        </p>
+        <p>Мы будем счастливы видеть вас рядом.</p>
+      </div>
+      <a class="btn btn--primary btn--large" href="#rsvp">Перейти к анкете</a>
+    </section>
+
+    <section class="section" id="date" aria-labelledby="date-title">
+      <div class="container container--center">
+        <h2 class="section__title" id="date-title">До свадьбы</h2>
+        <div class="date-block">
+          <div class="countdown" id="countdown" aria-live="polite">
+            <div class="countdown__item">
+              <span class="countdown__value" data-unit="days">—</span>
+              <span class="countdown__label">дней</span>
+            </div>
+            <div class="countdown__item">
+              <span class="countdown__value" data-unit="hours">—</span>
+              <span class="countdown__label">часов</span>
+            </div>
+            <div class="countdown__item">
+              <span class="countdown__value" data-unit="minutes">—</span>
+              <span class="countdown__label">минут</span>
+            </div>
+          </div>
+
+          <div class="week-cal" aria-label="Свадьба — 14 августа 2026, неделя 10–16 августа">
+            <p class="week-cal__month">Август</p>
+            <div class="week-cal__grid">
+              <div class="week-cal__col">
+                <span class="week-cal__wd">П</span>
+                <span class="week-cal__num">10</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">В</span>
+                <span class="week-cal__num">11</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">С</span>
+                <span class="week-cal__num">12</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">Ч</span>
+                <span class="week-cal__num">13</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">П</span>
+                <span class="week-cal__num week-cal__num--wedding">14</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">С</span>
+                <span class="week-cal__num">15</span>
+              </div>
+              <div class="week-cal__col">
+                <span class="week-cal__wd">В</span>
+                <span class="week-cal__num">16</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="event" aria-labelledby="event-title">
+      <div class="container container--narrow container--center">
+        <h2 class="section__title" id="event-title">Церемония и праздник</h2>
+        <div class="event-card event-card--centered">
+          <div class="event-card__body">
+            <p class="event-card__date">Пятница, 14 августа 2026</p>
+            <div class="event-card__venue">
+              <p class="event-card__venue-name">ЗАГС Центрального района</p>
+              <p class="event-card__venue-address">ул. Максима Богдановича, 17А</p>
+            </div>
+            <div class="event-card__venue">
+              <p class="event-card__venue-name">Троицкий Холл</p>
+              <p class="event-card__venue-address">Старовиленская улица, 10</p>
+            </div>
+          </div>
+          <a class="btn btn--primary" href="#location">Смотреть на карте</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="timeline" aria-labelledby="timeline-title">
+      <div class="container">
+        <h2 class="section__title" id="timeline-title">Как пройдёт день</h2>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__time">15:20</span>
+            <h3 class="timeline__name">Сбор гостей</h3>
+            <div class="timeline__content">
+              <p>Встречаемся и настраиваемся на праздник.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">15:40</span>
+            <h3 class="timeline__name">Церемония</h3>
+            <div class="timeline__content">
+              <p>Самый важный момент дня.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">17:00</span>
+            <h3 class="timeline__name">Фуршет</h3>
+            <div class="timeline__content">
+              <p>Лёгкие закуски, напитки и время немного выдохнуть после церемонии.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">18:00</span>
+            <h3 class="timeline__name">Банкет</h3>
+            <div class="timeline__content">
+              <p>Вкусный ужин, классные люди и танцы до ночи.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">22:00</span>
+            <h3 class="timeline__name">Вынос торта</h3>
+            <div class="timeline__content">
+              <p>Тот самый сладкий момент, который хочется разделить со всеми.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">24:00</span>
+            <h3 class="timeline__name">Завершение</h3>
+            <div class="timeline__content">
+              <p>Спасибо, что провели этот день вместе с нами.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="location" aria-labelledby="location-title">
+      <div class="container container--center">
+        <h2 class="section__title" id="location-title">Место</h2>
+        <p class="section__text">
+          Церемония и банкет пройдут в историческом центре Минска — рядом с Троицким предместьем.
+          На карте отмечены оба места, между ними несколько минут пешком.
+        </p>
+        <a
+          class="link-map"
+          id="map-open"
+          href="https://yandex.by/maps/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Открыть в Яндекс.Картах
+        </a>
+        <div class="map-wrap">
+          <iframe
+            class="map"
+            id="map-embed"
+            title="ЗАГС и место празднования — Минск"
+            src="https://yandex.ru/map-widget/v1/?ll=27.556523,53.908724&amp;z=16&amp;pt=27.556659,53.908862,pm2rdm~27.556387,53.908586,pm2blm&amp;lang=ru_RU"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container container--center">
+        <h2 class="section__title" id="faq-title">Частые вопросы</h2>
+        <div class="faq">
+          <details class="faq__item">
+            <summary>Какой дресс-код?</summary>
+            <p>
+              Нам близки спокойные оттенки, классика и минимализм.
+              Выбирайте то, в чём чувствуете себя красиво и комфортно.
+            </p>
+            <p>
+              И маленькая просьба:
+              в белом в этот вечер мы хотим видеть только одну девушку — Полину.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Что такое цветочная подписка?</summary>
+            <p>
+              Это подарок в виде регулярных доставок цветов домой — вместо букета в день свадьбы.
+              Вы выбираете сумму и оформляете подарок на сайте, а Полина будет получать свежие букеты
+              уже после нашего торжества.
+            </p>
+            <p>
+              Ссылку и QR-код для оформления смотрите в блоке «Вместо букета» ниже на странице.
+            </p>
+          </details>
+          <details class="faq__item">
+            <summary>Контакт координатора</summary>
+            <p>
+              Если хотите устроить сюрприз или у вас есть вопросы по программе, таймингу и организации свадьбы —
+              напишите нашему координатору.
+            </p>
+            <p id="coordinator-contact" class="faq__contact"></p>
+          </details>
+          <details class="faq__item">
+            <summary>До какого числа подтвердить присутствие?</summary>
+            <p>
+              Пожалуйста, заполните анкету до <strong>1 июля</strong> — так нам будет проще всё красиво
+              организовать и продумать рассадку.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="container container--narrow container--center">
+        <h2 class="section__title" id="rsvp-title">Сможете ли вы прийти?</h2>
+        <p class="section__text">
+          Нам важно понять, сможете ли вы разделить этот день вместе с нами.
+        </p>
+        <p class="section__text section__text--deadline">Заполните анкету до <strong>1 июля</strong></p>
+        <div class="rsvp-actions">
+          <button class="btn btn--primary btn--large" type="button" id="rsvp-open">
+            Заполнить анкету
+          </button>
+          <a class="btn btn--ghost btn--large" id="rsvp-link" href="#" target="_blank" rel="noopener noreferrer">
+            Открыть в новой вкладке
+          </a>
+        </div>
+        <div class="rsvp-panel" id="rsvp-panel" hidden>
+          <div class="rsvp-panel__header">
+            <h3 class="rsvp-panel__title">Анкета гостя</h3>
+            <button class="rsvp-panel__close" type="button" id="rsvp-close" aria-label="Закрыть анкету">&times;</button>
+          </div>
+          <iframe
+            class="rsvp-iframe"
+            id="rsvp-iframe"
+            title="Анкета — подтверждение присутствия"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="telegram" aria-labelledby="telegram-title">
+      <div class="container container--center">
+        <h2 class="section__title" id="telegram-title">Чат для гостей</h2>
+        <p class="section__text section__text--telegram">
+          Мы создали Telegram-чат для всех гостей, там можно будет задать вопросы, узнать важную информацию,
+          поделиться фотографиями и просто сохранить атмосферу этого дня.
+        </p>
+        <a
+          class="btn btn--primary btn--large"
+          id="telegram-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer">
+          Вступить в чат
+        </a>
+        <p class="telegram-note" id="telegram-note">Ссылка-приглашение появится здесь чуть позже</p>
+      </div>
+    </section>
+
+    <section class="section section--flowers" id="flowers" aria-labelledby="flowers-title">
+      <div class="container container--center">
+        <h2 class="section__title" id="flowers-title">Вместо букета</h2>
+        <p class="section__text section__text--flowers">
+          Мы очень любим цветы, но после свадьбы сразу уезжаем и не успеем насладиться вашими букетами.
+        </p>
+        <p class="section__text section__text--flowers">
+          Если хотите сделать подарок, нам будут приятны бутылка вашего любимого алкоголя
+          или цветочная подписка для Полины, ссылка и QR-код ниже.
+        </p>
+        <a
+          class="flowers-link"
+          id="flowers-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer">
+          Цветочная подписка
+        </a>
+        <figure class="flowers-qr">
+          <img
+            class="flowers-qr__img"
+            id="flowers-qr"
+            src="images/flower-qr-placeholder.svg"
+            alt="QR-код для оформления цветочной подписки"
+            width="200"
+            height="200"
+            loading="lazy"
+            decoding="async">
+        </figure>
+        <p class="flowers-note" hidden>Скоро здесь появится рабочая ссылка</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="site-footer__text">Максим и Полина, 14 августа 2026</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
