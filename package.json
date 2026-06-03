@@ -1,0 +1,26 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Одностраничное приглашение на свадьбу 14 августа 2026, Минск.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build-deploy.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=polina-maksim-wedding --branch=main --commit-dirty=true",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=polina-maksim-wedding --branch=preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesoules2000/wedding.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thesoules2000/wedding/issues"
+  },
+  "homepage": "https://github.com/thesoules2000/wedding#readme",
+  "devDependencies": {
+    "wrangler": "^4.86.0"
+  }
+}

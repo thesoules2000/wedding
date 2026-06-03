@@ -15,10 +15,10 @@ window.WEDDING_CONFIG = {
   // Дата свадьбы (полночь по локальному времени браузера гостя)
   weddingDate: "2026-08-14T00:00:00",
 
-  /** Главный экран: подставьте общее фото пары (PNG с прозрачностью — идеально) */
+  /** Главный экран: скетч пары (SVG) */
   hero: {
-    photoUrl: "images/troitskoe-minsk.webp",
-    photoAlt: "Максим и Полина",
+    illustrationUrl: "images/Скетчи/ludiclicami.svg",
+    illustrationAlt: "Полина и Максим",
   },
 
   googleFormEmbedUrl:
@@ -32,8 +32,8 @@ window.WEDDING_CONFIG = {
    * qrImageUrl — свой QR-картинкой; если пусто — QR строится по linkUrl автоматически
    */
   flowerSubscription: {
-    linkUrl: "https://example.com",
-    linkText: "Перейти к подписке",
+    linkUrl: "https://romeo-flowers.by/wedding/polina/",
+    linkText: "Цветочная подписка",
     qrImageUrl: "",
   },
 
@@ -41,5 +41,36 @@ window.WEDDING_CONFIG = {
   telegramChat: {
     inviteUrl: "https://t.me/+4lZjbHZuIIQxN2U6",
     linkText: "Вступить в чат",
+  },
+
+  /** Координатор свадьбы — контакты в блоке FAQ */
+  coordinator: {
+    name: "",
+    phone: "",
+    telegramUrl: "https://t.me/yemelianchik",
+    telegramLabel: "@yemelianchik",
+  },
+
+  /**
+   * Карта: две точки (lon, lat — как в Яндекс.Картах).
+   * party — место празднования; zags — церемония (ул. Максима Богдановича, 17А).
+   */
+  map: {
+    zoom: 16,
+    center: { lon: 27.556523, lat: 53.908724 },
+    points: [
+      {
+        lon: 27.556659,
+        lat: 53.908862,
+        style: "pm2rdm",
+        label: "ЗАГС Центрального района",
+      },
+      {
+        lon: 27.556387,
+        lat: 53.908586,
+        style: "pm2blm",
+        label: "Троицкий Холл",
+      },
+    ],
   },
 };
