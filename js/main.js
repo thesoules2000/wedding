@@ -7,10 +7,46 @@
 
   const config = window.WEDDING_CONFIG || {};
 
+  initHero(config.hero);
+  initMap(config.map);
   initCountdown(config.weddingDate);
   initRsvp(config.googleFormEmbedUrl, config.googleFormViewUrl);
   initFlowerSubscription(config.flowerSubscription);
   initTelegramChat(config.telegramChat);
+  initCoordinator(config.coordinator);
+
+  /** Виджет и ссылка Яндекс.Карт с двумя метками */
+  function initMap(map) {
+    const embed = document.getElementById("map-embed");
+    const link = document.getElementById("map-open");
+    if (!embed || !map?.points?.length) return;
+
+    const zoom = map.zoom ?? 16;
+    const center = map.center ?? {
+      lon:
+        map.points.reduce((sum, p) => sum + p.lon, 0) / map.points.length,
+      lat:
+        map.points.reduce((sum, p) => sum + p.lat, 0) / map.points.length,
+    };
+    const ll = `${center.lon},${center.lat}`;
+    const pt = map.points
+      .map((p) => `${p.lon},${p.lat},${p.style || "pm2rdm"}`)
+      .join("~");
+    const query = `ll=${ll}&z=${zoom}&pt=${pt}&lang=ru_RU`;
+
+    embed.src = `https://yandex.ru/map-widget/v1/?${query}`;
+    if (link) {
+      link.href = `https://yandex.by/maps/?${query}`;
+    }
+  }
+
+  /** Скетч и подпись на главном экране */
+  function initHero(hero) {
+    const img = document.getElementById("hero-illustration");
+    if (!img || !hero) return;
+    if (hero.illustrationUrl) img.src = hero.illustrationUrl;
+    if (hero.illustrationAlt) img.alt = hero.illustrationAlt;
+  }
 
   /** Дни / часы / минуты до свадьбы */
   function initCountdown(dateString) {
@@ -125,6 +161,48 @@
     } else if (noteEl) {
       noteEl.hidden = true;
     }
+  }
+
+  /** Контакты координатора в FAQ */
+  function initCoordinator(coordinator) {
+    const root = document.getElementById("coordinator-contact");
+    if (!root || !coordinator) return;
+
+    const name = (coordinator.name || "").trim();
+    const phone = (coordinator.phone || "").trim();
+    const telegramUrl = (coordinator.telegramUrl || "").trim();
+    const telegramLabel = (coordinator.telegramLabel || "").trim();
+
+    const parts = [];
+
+    if (name) {
+      parts.push(document.createTextNode(name));
+    }
+
+    if (phone) {
+      if (parts.length) parts.push(document.createTextNode(" · "));
+      const phoneLink = document.createElement("a");
+      phoneLink.href = "tel:" + phone.replace(/\s/g, "");
+      phoneLink.textContent = phone;
+      parts.push(phoneLink);
+    }
+
+    if (telegramUrl) {
+      if (parts.length) parts.push(document.createTextNode(" · "));
+      const tgLink = document.createElement("a");
+      tgLink.href = telegramUrl;
+      tgLink.target = "_blank";
+      tgLink.rel = "noopener noreferrer";
+      tgLink.textContent = telegramLabel || "Telegram";
+      parts.push(tgLink);
+    }
+
+    if (!parts.length) {
+      root.textContent = "Контакты координатора появятся здесь чуть позже.";
+      return;
+    }
+
+    root.replaceChildren(...parts);
   }
 
   /** Цветочная подписка — ссылка и QR */
