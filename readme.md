@@ -70,12 +70,14 @@ python -m http.server 8080
 
 Сайт для гостей: **https://thesoules2000.github.io/wedding/**
 
-После push в ветку `main` GitHub Actions собирает `dist/` и публикует сайт автоматически.
+После push в ветку `design/alternative-1` или `main` GitHub Actions собирает `dist/` и публикует в ветку `gh-pages`.
 
 Первый раз в репозитории на GitHub:
 
-1. **Settings** → **Pages** → **Build and deployment** → Source: **GitHub Actions**
-2. Дождитесь зелёной галочки у workflow **GitHub Pages** во вкладке **Actions**
+1. **Settings** → **Pages**
+2. **Build and deployment** → **Source**: **Deploy from a branch**
+3. **Branch**: `gh-pages` → папка **`/ (root)`** → **Save**
+4. Дождитесь зелёной галочки у workflow **GitHub Pages** во вкладке **Actions** (1–2 мин)
 
 Локально перед push:
 

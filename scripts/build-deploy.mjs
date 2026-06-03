@@ -47,4 +47,6 @@ for (const item of copyItems) {
   copyRecursive(src, path.join(dist, item));
 }
 
+fs.copyFileSync(path.join(root, ".nojekyll"), path.join(dist, ".nojekyll"));
+
 console.log(`Built ${dist}`);
