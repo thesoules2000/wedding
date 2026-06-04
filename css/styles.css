@@ -703,6 +703,8 @@ a {
 
 /* --- RSVP --- */
 .rsvp-panel {
+  align-self: stretch;
+  width: 100%;
   margin-top: var(--space-lg);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -746,9 +748,17 @@ a {
 }
 
 .rsvp-iframe {
+  display: block;
   width: 100%;
+  min-width: 100%;
   height: min(70vh, 520px);
   border: 0;
+}
+
+@media (min-width: 640px) {
+  .rsvp-iframe {
+    height: min(75vh, 720px);
+  }
 }
 
 /* --- Telegram --- */
