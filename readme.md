@@ -70,7 +70,7 @@ python -m http.server 8080
 
 Сайт для гостей: **https://thesoules2000.github.io/wedding/**
 
-После push в ветку `design/alternative-1` или `main` GitHub Actions собирает `dist/` и публикует сайт.
+После merge в `main` GitHub Actions собирает `dist/` и публикует сайт (деплой только с `main`).
 
 Первый раз в репозитории на GitHub:
 

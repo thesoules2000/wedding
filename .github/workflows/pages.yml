@@ -2,7 +2,7 @@ name: GitHub Pages
 
 on:
   push:
-    branches: [main, design/alternative-1]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
