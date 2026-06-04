@@ -9,13 +9,7 @@ import JavaScriptObfuscator from "javascript-obfuscator";
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dist = path.join(root, "dist");
 
-const copyOnly = [
-  "favicon.svg",
-  "favicon-16.png",
-  "favicon-32.png",
-  "apple-touch-icon.png",
-  "images",
-];
+const copyOnly = ["images"];
 
 const JS_BUNDLE = "js/app.min.js";
 const CSS_OUT = "css/styles.min.css";
