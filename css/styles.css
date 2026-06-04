@@ -856,3 +856,130 @@ a {
   line-height: 1.65;
   color: var(--color-text-muted);
 }
+
+/* --- Крупнее на десктопе --- */
+@media (min-width: 768px) {
+  body {
+    font-size: 1.1875rem;
+    line-height: 1.7;
+  }
+
+  .hero__title {
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+  }
+
+  .hero__names {
+    font-size: clamp(1.75rem, 3vw, 2.375rem);
+  }
+
+  .hero__place {
+    font-size: 1.0625rem;
+  }
+
+  .hero__date {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+  }
+
+  .section__label {
+    font-size: 0.75rem;
+  }
+
+  .section__title {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+  }
+
+  .section__text--large,
+  .section__text--deadline {
+    font-size: 1.3125rem;
+  }
+
+  .event-card__date,
+  .event-card__venue-name,
+  .event-card__venue-address,
+  .event-card__poem {
+    font-size: 1.0625rem;
+  }
+
+  .countdown__value {
+    font-size: clamp(2.5rem, 6vw, 3.25rem);
+  }
+
+  .countdown__label {
+    font-size: 0.75rem;
+  }
+
+  .week-cal__month {
+    font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  }
+
+  .week-cal__wd {
+    font-size: 0.75rem;
+  }
+
+  .week-cal__num {
+    width: 2.375rem;
+    height: 2.375rem;
+    font-size: 0.9375rem;
+  }
+
+  .timeline__time {
+    font-size: 0.75rem;
+  }
+
+  .timeline__name {
+    font-size: 1.75rem;
+  }
+
+  .timeline__content p {
+    font-size: 1.0625rem;
+  }
+
+  .section__note {
+    font-size: 1rem;
+  }
+
+  .faq__item summary,
+  .faq__item p {
+    font-size: 1.0625rem;
+  }
+
+  .link-map,
+  .flowers-link,
+  .telegram-note,
+  .flowers-note,
+  .site-footer__text {
+    font-size: 0.9375rem;
+  }
+
+  .btn {
+    font-size: 0.9375rem;
+    min-height: 3.5rem;
+  }
+
+  .rsvp-panel__title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  .hero__title {
+    font-size: 3.375rem;
+  }
+
+  .hero__names {
+    font-size: 2.5rem;
+  }
+
+  .section__title {
+    font-size: 3.625rem;
+  }
+
+  .section__text--large,
+  .section__text--deadline {
+    font-size: 1.375rem;
+  }
+}
