@@ -808,9 +808,6 @@ a {
   border-bottom: none;
 }
 
-.section__text--deadline {
-  font-size: 1.125rem;
-}
 
 .flowers-qr {
   margin: 0 auto;
@@ -888,8 +885,7 @@ a {
     font-size: clamp(2.25rem, 4vw, 3.5rem);
   }
 
-  .section__text--large,
-  .section__text--deadline {
+  .section__text--large {
     font-size: 1.3125rem;
   }
 
@@ -978,8 +974,7 @@ a {
     font-size: 3.625rem;
   }
 
-  .section__text--large,
-  .section__text--deadline {
+  .section__text--large {
     font-size: 1.375rem;
   }
 }

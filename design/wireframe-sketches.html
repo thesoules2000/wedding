@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wireframe — Максим &amp; Полина (скетчи)</title>
+  <style>
+    /* Токены — скопируйте в Figma → Local styles */
+    :root {
+      --bg: #faf7f2;
+      --surface: #fffdfb;
+      --text: #4a3c34;
+      --text-muted: #7d6e62;
+      --accent: #8a5f63;
+      --accent-soft: rgba(138, 95, 99, 0.14);
+      --border: rgba(138, 95, 99, 0.12);
+      --sketch-stroke: #4a3c34;
+
+      --font-display: "Viaoda Libre", Georgia, serif;
+      --container: min(100% - 2rem, 640px);
+      --container-wide: min(100% - 2rem, 832px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
+      background: #e8e4df;
+    }
+
+    .guide-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0.5rem 1rem;
+      background: #2d2a28;
+      color: #faf7f2;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .page {
+      max-width: 390px;
+      margin: 0 auto;
+      background: var(--bg);
+      box-shadow: 0 0 40px rgba(0,0,0,.12);
+    }
+
+    @media (min-width: 900px) {
+      .page { max-width: 1440px; }
+    }
+
+    /* Wireframe helpers */
+    .wf-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.25rem;
+    }
+
+    .wf-id {
+      font-size: 9px;
+      color: var(--text-muted);
+      font-family: ui-monospace, monospace;
+    }
+
+    .wf-block {
+      border: 2px dashed var(--accent);
+      background: var(--accent-soft);
+      border-radius: 8px;
+      padding: 0.75rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .wf-sketch {
+      border: 2px dashed var(--sketch-stroke);
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 4px,
+        rgba(74, 60, 52, 0.04) 4px,
+        rgba(74, 60, 52, 0.04) 8px
+      );
+      border-radius: 4px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    .section::before {
+      content: attr(data-section);
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      font-size: 9px;
+      font-family: ui-monospace, monospace;
+      color: var(--accent);
+      opacity: 0.6;
+    }
+
+    .container { max-width: var(--container); margin: 0 auto; }
+    .container--wide { max-width: var(--container-wide); margin: 0 auto; }
+    .center { text-align: center; }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      margin: 0 0 0.5rem;
+    }
+
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1rem; }
+
+    p { margin: 0 0 0.75rem; color: var(--text-muted); font-size: 13px; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.25rem;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 999px;
+      font-size: 12px;
+      text-decoration: none;
+      border: none;
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+      align-content: center;
+      position: relative;
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 3rem 4rem;
+      }
+    }
+
+    .hero__photo {
+      aspect-ratio: 4/5;
+      background: #ddd;
+      border-radius: 12px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #888;
+    }
+
+    .hero__decor {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .hero__decor .wf-sketch { flex: 1; min-width: 60px; min-height: 40px; }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .countdown__item {
+      text-align: center;
+      padding: 1rem;
+      background: var(--surface);
+      border-radius: 12px;
+      min-width: 72px;
+      box-shadow: 0 2px 12px rgba(138,95,99,.08);
+    }
+
+    .countdown__value {
+      display: block;
+      font-size: 1.75rem;
+      font-family: var(--font-display);
+      color: var(--text);
+    }
+
+    .week-cal {
+      display: flex;
+      gap: 0.25rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .week-cal__col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem;
+      min-width: 36px;
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    .week-cal__num--wedding {
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Cards */
+    .event-card {
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 24px rgba(138,95,99,.1);
+    }
+
+    /* Timeline */
+    .timeline { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+
+    .timeline__item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .timeline__time {
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FAQ */
+    .faq__item {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .faq__item summary {
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* Map */
+    .map-wrap {
+      aspect-ratio: 16/10;
+      background: #d4cfc8;
+      border-radius: 12px;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 11px;
+    }
+
+    /* Divider with sketch */
+    .sketch-divider {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .sketch-divider .wf-sketch { flex: 1; min-height: 32px; }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .palette__swatch {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      font-size: 8px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 4px;
+      color: #fff;
+      text-shadow: 0 1px 2px rgba(0,0,0,.3);
+    }
+
+    .assets-panel {
+      padding: 2rem 1rem;
+      background: #fff;
+      border-top: 4px solid var(--accent);
+    }
+
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .asset-chip {
+      font-size: 9px;
+      padding: 0.35rem;
+      background: var(--accent-soft);
+      border-radius: 4px;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="guide-bar">
+    Wireframe-референс для Figma · откройте рядом с Figma (390px ширина окна) ·
+    скетчи: перетащите SVG из <strong>images/Скетчи/</strong> прямо на канвас
+  </div>
+
+  <div class="page">
+
+    <!-- 01 HERO -->
+    <header class="section hero" data-section="#top hero">
+      <figure class="hero__photo">Фото пары<br>800×1000</figure>
+      <div>
+        <p class="wf-label">Hero</p>
+        <h1>Полина и Максим</h1>
+        <p style="font-size:1.25rem;color:var(--text)">Свадьба · 14.08.26</p>
+        <div class="hero__decor">
+          <div class="wf-sketch">01-zagolovok</div>
+          <div class="wf-sketch">bant</div>
+          <div class="wf-sketch">serdtsa</div>
+        </div>
+        <p style="margin-top:1rem;font-size:20px">↓ scroll</p>
+      </div>
+    </header>
+
+    <!-- 02 WELCOME -->
+    <section class="section center" data-section="#welcome">
+      <div class="container">
+        <p class="wf-label">Привет!</p>
+        <h2>Дорогие гости</h2>
+        <p>Текст приглашения (2 абзаца)</p>
+        <div class="sketch-divider">
+          <div class="wf-sketch">lenta / 13-lenta-volna</div>
+        </div>
+        <div class="wf-sketch" style="min-height:80px;margin-bottom:1rem">11-para-s-buketom или ludiclicami</div>
+        <a class="btn" href="#">Перейти к анкете</a>
+      </div>
+    </section>
+
+    <!-- 03 COUNTDOWN -->
+    <section class="section center" data-section="#date">
+      <div class="container">
+        <p class="wf-label">Сколько осталось</p>
+        <h2>До свадьбы</h2>
+        <div class="countdown">
+          <div class="countdown__item"><span class="countdown__value">—</span>дней</div>
+          <div class="countdown__item"><span class="countdown__value">—</span>часов</div>
+          <div class="countdown__item"><span class="countdown__value">—</span>минут</div>
+        </div>
+        <div class="week-cal" aria-hidden="true">
+          <div class="week-cal__col"><span>П</span><span>10</span></div>
+          <div class="week-cal__col"><span>В</span><span>11</span></div>
+          <div class="week-cal__col"><span>С</span><span>12</span></div>
+          <div class="week-cal__col"><span>Ч</span><span>13</span></div>
+          <div class="week-cal__col"><span class="week-cal__num--wedding">14</span></div>
+          <div class="week-cal__col"><span>С</span><span>15</span></div>
+          <div class="week-cal__col"><span>В</span><span>16</span></div>
+        </div>
+        <div class="hero__decor" style="margin-top:1.5rem">
+          <div class="wf-sketch">bokalcentr</div>
+          <div class="wf-sketch">bokallevo</div>
+          <div class="wf-sketch">bokalpravo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 EVENT -->
+    <section class="section" data-section="#event">
+      <div class="container">
+        <p class="wf-label">Главное</p>
+        <h2>Церемония и праздник</h2>
+        <div class="event-card">
+          <p><strong>Троицкое предместье · Минск</strong></p>
+          <p>Пятница, 14 августа 2026</p>
+          <p>Сбор гостей — с 15:00</p>
+          <p>Короткий поэтичный текст о месте</p>
+          <div class="wf-sketch" style="margin:1rem 0">candelyabr / 05-kandelabr</div>
+          <a class="btn" href="#">Смотреть на карте</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 TIMELINE -->
+    <section class="section" data-section="#timeline">
+      <div class="container container--wide">
+        <p class="wf-label">Программа</p>
+        <h2>Как пройдёт день</h2>
+        <div class="wf-sketch" style="margin-bottom:1rem">pribori / 07-stolovye-pribory — декор секции</div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__time">15:00</span>
+            <div><h3>Сбор гостей</h3><p>Описание</p></div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">15:40</span>
+            <div><h3>Церемония</h3><p>Описание</p></div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">17:10</span>
+            <div><h3>Фуршет</h3><p>Описание + wf-sketch: bokal</p></div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">18:10</span>
+            <div><h3>Банкет</h3><p>Описание</p></div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">22:00</span>
+            <div><h3>Вынос торта</h3><p>КусокТорта.png</p></div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__time">24:00</span>
+            <div><h3>Окончание</h3><p>love1 / love2 / love3</p></div>
+          </li>
+        </ol>
+        <p class="wf-id">Примечание: время может сдвинуться</p>
+      </div>
+    </section>
+
+    <!-- 06 LOCATION -->
+    <section class="section" data-section="#location">
+      <div class="container container--wide">
+        <p class="wf-label">Где</p>
+        <h2>Троицкое предместье</h2>
+        <p>Текст о месте (2–3 предложения)</p>
+        <a href="#" style="color:var(--accent);font-size:13px">Открыть в Яндекс.Картах</a>
+        <div class="map-wrap">iframe карта 16:10</div>
+        <div class="hero__decor" style="margin-top:1rem">
+          <div class="wf-sketch">golub1</div>
+          <div class="wf-sketch">golub2</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 FAQ -->
+    <section class="section center" data-section="#faq">
+      <div class="container">
+        <p class="wf-label">Для гостей</p>
+        <h2>Частые вопросы</h2>
+        <div class="faq">
+          <details class="faq__item" open><summary>Какой дресс-код?</summary><p>Ответ</p></details>
+          <details class="faq__item"><summary>Что с подарками?</summary><p>Ответ</p></details>
+          <details class="faq__item"><summary>Есть ли чат для гостей?</summary><p>Ответ</p></details>
+          <details class="faq__item"><summary>Как подтвердить присутствие?</summary><p>Заполните анкету в разделе RSVP.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 RSVP -->
+    <section class="section center" data-section="#rsvp">
+      <div class="container">
+        <p class="wf-label">Подтверждение</p>
+        <h2>Сможете ли вы прийти?</h2>
+        <p>Текст о подтверждении присутствия</p>
+        <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0">
+          <a class="btn" href="#">Заполнить анкету</a>
+          <a class="btn btn--ghost" href="#">Открыть в новой вкладке</a>
+        </div>
+        <div class="wf-block">Панель с iframe Google Form (модалка)</div>
+        <div class="wf-sketch" style="margin-top:1rem">10-lenta-banner — декор</div>
+      </div>
+    </section>
+
+    <!-- 09 TELEGRAM -->
+    <section class="section center" data-section="#telegram">
+      <div class="container">
+        <p class="wf-label">Общение</p>
+        <h2>Чат для гостей</h2>
+        <p>Текст про Telegram-чат</p>
+        <a class="btn" href="#">Вступить в чат</a>
+        <p class="wf-id">Ссылка появится позже</p>
+      </div>
+    </section>
+
+    <!-- 10 FLOWERS -->
+    <section class="section center" data-section="#flowers">
+      <div class="container">
+        <p class="wf-label">Подарок</p>
+        <h2>Цветочная подписка</h2>
+        <p>Текст (2 абзаца)</p>
+        <a href="#" style="color:var(--accent)">Перейти к подписке</a>
+        <div class="wf-block" style="width:200px;height:200px;margin:1rem auto">QR 200×200</div>
+        <div class="wf-sketch" style="margin-top:0.5rem">14-para-s-buketom-bolshaya</div>
+      </div>
+    </section>
+
+    <!-- DESIGN TOKENS (для Figma) -->
+    <aside class="assets-panel">
+      <p class="wf-label">Color styles → Figma</p>
+      <div class="palette">
+        <div class="palette__swatch" style="background:#faf7f2;color:#4a3c34">bg</div>
+        <div class="palette__swatch" style="background:#fffdfb;color:#4a3c34">surface</div>
+        <div class="palette__swatch" style="background:#4a3c34">text</div>
+        <div class="palette__swatch" style="background:#7d6e62">muted</div>
+        <div class="palette__swatch" style="background:#8a5f63">accent</div>
+      </div>
+
+      <p class="wf-label" style="margin-top:1.5rem">Шрифт</p>
+      <p><strong>Viaoda Libre</strong> — заголовки и текст (Google Fonts)</p>
+      <p class="wf-id">Альтернатива под скетчи: Caveat, Patrick Hand, Kalam</p>
+
+      <p class="wf-label" style="margin-top:1.5rem">Скетчи в images/Скетчи/</p>
+      <div class="assets-grid">
+        <span class="asset-chip">01-zagolovok</span>
+        <span class="asset-chip">bant / bantletaschiy</span>
+        <span class="asset-chip">bokalcentr/levo/pravo</span>
+        <span class="asset-chip">candelyabr</span>
+        <span class="asset-chip">pribori</span>
+        <span class="asset-chip">lenta / lenta-volna</span>
+        <span class="asset-chip">serdtsa / love1-3</span>
+        <span class="asset-chip">para-s-buketom</span>
+        <span class="asset-chip">ludiclicami/bezlic</span>
+        <span class="asset-chip">golub1/2</span>
+        <span class="asset-chip">ptitsa-1/2</span>
+        <span class="asset-chip">ГораШамп.png</span>
+        <span class="asset-chip">КусокТорта.png</span>
+        <span class="asset-chip">Дискошар.png</span>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
